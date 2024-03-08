@@ -148,19 +148,23 @@ namespace WindowsFormsApp1
         {
             if (e.KeyCode == Keys.A)//(e.KeyValue == 37)
             {
-                x = x - 5;
+                if ((x-5) > r)
+                    x = x - 5;
             }
             if (e.KeyCode == Keys.D)//(e.KeyValue == 39)
             {
-                x = x + 5;
+                if ((x + 5) <720-r)
+                    x = x + 5;
             }
             if (e.KeyCode == Keys.W)//(e.KeyValue == 38)
             {
-                y = y - 5;
+                if ((y - 5) > r)
+                    y = y - 5;
             }
             if (e.KeyCode == Keys.S)//(e.KeyValue == 40)
             {
-                y = y + 5;
+                if ((y + 5) < 610 - r)
+                    y = y + 5;
             }
         }
 
@@ -203,6 +207,7 @@ namespace WindowsFormsApp1
             r = Convert.ToInt32(file.ReadLine());
             Sticky = Convert.ToBoolean(file.ReadLine());
             color = Color.FromName(file.ReadLine());
+            brush = new SolidBrush(color);
         }
         public override string Name()
         {
@@ -255,19 +260,23 @@ namespace WindowsFormsApp1
         {
             if (e.KeyCode == Keys.A)
             {
-                x = x - 5;
+                if (x-5 > r)
+                    x = x - 5;
             }
             if (e.KeyCode == Keys.D)
             {
-                x = x + 5;
+                if (x + 5 < 720 - r)
+                    x = x + 5;
             }
             if (e.KeyCode == Keys.W)
             {
-                y = y - 5;
+                if (y - 5 > r)
+                    y = y - 5;
             }
             if (e.KeyCode == Keys.S)
             {
-                y = y + 5;
+                if (y + 5 < 610 - r)
+                    y = y + 5;
             }
         }
         public override void chooseColor(int col)
@@ -311,6 +320,7 @@ namespace WindowsFormsApp1
             r = Convert.ToInt32(file.ReadLine());
             Sticky = Convert.ToBoolean(file.ReadLine());
             color = Color.FromName(file.ReadLine());
+            brush = new SolidBrush(color);
         }
         public override string Name()
         {
@@ -392,27 +402,39 @@ namespace WindowsFormsApp1
         {
             if (e.KeyCode == Keys.A)
             {
-                points[0].X = points[0].X - 5; points[0].Y = points[0].Y;
-                points[1].X = points[1].X - 5; points[1].Y = points[1].Y;
-                points[2].X = points[2].X - 5; points[2].Y = points[2].Y;
+                if (points[0].X - 5 > r)
+                {
+                    points[0].X = points[0].X - 5; points[0].Y = points[0].Y;
+                    points[1].X = points[1].X - 5; points[1].Y = points[1].Y;
+                    points[2].X = points[2].X - 5; points[2].Y = points[2].Y;
+                }
             }
             if (e.KeyCode == Keys.D)
             {
-                points[0].X = points[0].X + 5; points[0].Y = points[0].Y;
-                points[1].X = points[1].X + 5; points[1].Y = points[1].Y;
-                points[2].X = points[2].X + 5; points[2].Y = points[2].Y;
+                if (points[2].X + 5 < 720)
+                {
+                    points[0].X = points[0].X + 5; points[0].Y = points[0].Y;
+                    points[1].X = points[1].X + 5; points[1].Y = points[1].Y;
+                    points[2].X = points[2].X + 5; points[2].Y = points[2].Y;
+                }
             }
             if (e.KeyCode == Keys.W)
             {
-                points[0].X = points[0].X; points[0].Y = points[0].Y - 5;
-                points[1].X = points[1].X; points[1].Y = points[1].Y - 5;
-                points[2].X = points[2].X; points[2].Y = points[2].Y - 5;
+                if (points[0].Y - 5 > 0)
+                {
+                    points[0].X = points[0].X; points[0].Y = points[0].Y - 5;
+                    points[1].X = points[1].X; points[1].Y = points[1].Y - 5;
+                    points[2].X = points[2].X; points[2].Y = points[2].Y - 5;
+                }
             }
             if (e.KeyCode == Keys.S)
             {
-                points[0].X = points[0].X; points[0].Y = points[0].Y + 5;
-                points[1].X = points[1].X; points[1].Y = points[1].Y + 5;
-                points[2].X = points[2].X; points[2].Y = points[2].Y + 5;
+                if (points[2].Y + 5 < 610)
+                {
+                    points[0].X = points[0].X; points[0].Y = points[0].Y + 5;
+                    points[1].X = points[1].X; points[1].Y = points[1].Y + 5;
+                    points[2].X = points[2].X; points[2].Y = points[2].Y + 5;
+                }
             }
         }
         public override void chooseColor(int col)
@@ -453,8 +475,12 @@ namespace WindowsFormsApp1
             x = Convert.ToInt32(file.ReadLine());
             y = Convert.ToInt32(file.ReadLine());
             r = Convert.ToInt32(file.ReadLine());
+            points[0].X = x; points[0].Y = y - r;
+            points[1].X = x - r; points[1].Y = y + r;
+            points[2].X = x + r; points[2].Y = y + r;
             Sticky = Convert.ToBoolean(file.ReadLine());
             color = Color.FromName(file.ReadLine());
+            brush = new SolidBrush(color);
         }
         public override string Name()
         {
