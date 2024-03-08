@@ -58,32 +58,6 @@ namespace WindowsFormsApp1
             Refresh();
         }
 
-        //private void Form1_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    Graphics g = panel1.CreateGraphics();
-        //    if (e.KeyCode == Keys.Delete)
-        //    {
-        //        Storage.removeCheckedObject(Storage);
-        //        g.Clear(Color.White);
-        //    }
-
-        //    if (e.KeyValue == 107 || e.KeyValue == 109)
-        //    {
-        //        g.Clear(Color.White);
-        //        Storage.Size(e);
-        //    }
-        //    if (e.KeyValue == 37 || e.KeyValue == 38 || e.KeyValue == 39 || e.KeyValue == 40)
-        //    {
-        //        g.Clear(Color.White);
-        //        Storage.Move(e);
-        //    }
-        //    if (e.KeyCode == Keys.F5)
-        //    {
-        //        g.Clear(Color.White);
-        //        Storage.chooseColor(col);
-        //    }
-        //    Refresh();
-        //}
         private void black_Click(object sender, EventArgs e)
         {
             col = 1;
@@ -103,8 +77,6 @@ namespace WindowsFormsApp1
         {
             col = 4;
         }
-
-
 
         private void circle_Click(object sender, EventArgs e)
         {

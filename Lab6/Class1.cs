@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -795,9 +789,7 @@ namespace WindowsFormsApp1
         private int _count;
         private int _maxcount;
         public figure[] _shapes;
-        //private bool Checked;
         private bool Colored;
-        //public MyStorage storage = new MyStorage();
 
         public CGroup(int maxcount)
         {
@@ -935,8 +927,5 @@ namespace WindowsFormsApp1
         {
             return "CGroup";
         }
-
-
-
     }
 }
