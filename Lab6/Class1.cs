@@ -11,7 +11,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    class figure
+    class figure //базовый класс
     {
         protected Color color = Color.White;
         public bool Sticky = false;
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
 
     }
 
-    class Circle : figure
+    class Circle : figure //класс фигуры круга
     {
         private bool Colored;
         private Pen pen;
@@ -215,7 +215,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    class sqare : figure
+    class sqare : figure //класс фигуры квадрата
     {
         private bool Colored;
         private SolidBrush brush;
@@ -352,7 +352,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    class triangle : figure
+    class triangle : figure //класс фигуры треугольника
     {
         private Point[] points;
         private bool Colored;
@@ -516,7 +516,7 @@ namespace WindowsFormsApp1
         }
 
     }
-    class Factory
+    class Factory //класс создания объектов
     {
         public figure createShape(char name)
         {
@@ -543,7 +543,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    class MyStorage
+    class MyStorage //класс хранилища 
     {
         private int size;
         public figure[] storage;
@@ -790,7 +790,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    class CGroup : figure
+    class CGroup : figure //класс группы
     {
         private int _count;
         private int _maxcount;
